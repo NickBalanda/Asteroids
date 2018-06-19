@@ -25,7 +25,7 @@ public class PlayerShooter : MonoBehaviour {
 	}
 
     void Shoot() {
-        GameObject bullet = ObjectPooler.instance.GetPooledObject();
+        GameObject bullet = ObjectPooler.instance.GetPooledObject("Bullet");
         if (bullet != null) {
             bullet.transform.position = shootPosition.position;
             bullet.transform.rotation = shootPosition.rotation;
