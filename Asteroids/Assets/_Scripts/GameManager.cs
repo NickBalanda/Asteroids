@@ -1,10 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 
     public int numberOfAsteroidsSpawned = 4;
+
+    public int score;
+    int highScore;
+
+    [Header("UI")]
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
+    public GameObject newHighScore;
 
     public static GameManager instance;
     void Awake() {
@@ -12,8 +21,16 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start () {
+        
+        AddPoints(0);
+
+        //Set the current high score
+        highScore = PlayerPrefs.GetInt("HighScore");
+        highScoreText.text = "high score: " + highScore.ToString();
+
         //Wait to spawn after the pooler Instantiates
         Invoke("SpawnAsteroids", 1);
+
         //Check every few seconds if new asteroids shoud be spawned
         InvokeRepeating("CheckIfAllAsteroidsDestroyed", 2 , 2);
         InvokeRepeating("SpawnUFO", 8, Random.Range(8,12));
@@ -68,8 +85,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void AddPoints(int points) {
+        score += points;
+        scoreText.text = "score: " + score.ToString();
+    }
+
     public void GameOver() {
         CancelInvoke();
-
+        if(score > highScore) {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScoreText.text = "high score: " + score.ToString();
+            newHighScore.SetActive(true);
+        }
     }
 }

@@ -24,7 +24,8 @@ public class UFO : MonoBehaviour {
 
     private void FixedUpdate() {
         //Get players direction
-        direction = (player.transform.position - transform.position).normalized;
+        if(player != null)
+            direction = (player.transform.position - transform.position).normalized;
 
         //change the direction of movement and shoot every few seconds
         if (Time.time >= nextChange)
@@ -64,6 +65,12 @@ public class UFO : MonoBehaviour {
             //if hit by bullet destroy bullet and ufo
             CancelInvoke();
             other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
+
+        if (other.tag == "Player") {
+            GameManager.instance.GameOver();
+            Destroy(other.gameObject);
             gameObject.SetActive(false);
         }
     }

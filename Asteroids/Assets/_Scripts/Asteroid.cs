@@ -62,6 +62,12 @@ public class Asteroid : MonoBehaviour {
 
             gameObject.SetActive(false);
         }
+        if (other.tag == "Player") {
+            GameManager.instance.GameOver();
+            Destroy(other.gameObject);
+            SpawnNewAsteroids();
+            gameObject.SetActive(false);
+        }
     }
 
 }
