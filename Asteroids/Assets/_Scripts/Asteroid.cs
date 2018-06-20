@@ -51,7 +51,9 @@ public class Asteroid : MonoBehaviour {
             //if hit by bullet destroy bullet and if possible create smaller asteroids
             other.gameObject.SetActive(false);
             SpawnNewAsteroids();
+            
             gameObject.SetActive(false);
         }
     }
+
 }
