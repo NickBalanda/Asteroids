@@ -6,6 +6,10 @@ public class UFO : MonoBehaviour {
 
     public float speed;
     public float bulletSpeed;
+    public float changeRateMin;
+    public float changeRateMax;
+
+    float nextChange;
 
     Rigidbody rb;
     GameObject player;
@@ -14,24 +18,25 @@ public class UFO : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
-        //change the direction of movement and shoot every few seconds
-        InvokeRepeating("Movement", 1, Random.Range(2, 3));
-    }
-    void OnEnabled () {       
-        InvokeRepeating("Movement", 1, Random.Range(2,3));
-    }
-    private void OnDisable() {
-        CancelInvoke();
+        
+        Movement();
     }
 
-    private void Update() {
-        direction = (player.transform.position - transform.position).normalized;    
+    private void FixedUpdate() {
+        //Get players direction
+        direction = (player.transform.position - transform.position).normalized;
+
+        //change the direction of movement and shoot every few seconds
+        if (Time.time >= nextChange)
+        {
+            nextChange = Time.time + Random.Range(changeRateMin,changeRateMax);
+            Movement();
+            Shoot();
+        }
     }
 
     void Movement() {
-
         rb.velocity = new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)).normalized * speed;
-        Shoot();
     }
 
     void Shoot() {

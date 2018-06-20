@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa4146202b542b43bd8e0be6ff48b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenTop: 12
-  screenBottom: -12
-  screenRight: 18
-  screenLeft: -18
+  screenTopOffset: 0
+  screenBottomOffset: 2
+  screenRightOffset: 0
+  screenLeftOffset: 0
 --- !u!114 &114969916475810284
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class ScreenWrap : MonoBehaviour {
 
-    public float screenTop = 12;
-    public float screenBottom = -12;
-    public float screenRight = 18;
-    public float screenLeft = -18;
+    public float screenTopOffset;
+    public float screenBottomOffset;
+    public float screenRightOffset;
+    public float screenLeftOffset;
 
+    //Sides of the screen
+    float screenTop;
+    float screenBottom;
+    float screenRight;
+    float screenLeft;
+
+    private void Start() {
+        
+        float vertExtent = Camera.main.orthographicSize;
+        float horzExtent = vertExtent * Screen.width / Screen.height;
+
+        screenTop = vertExtent + screenTopOffset;
+        screenBottom = -vertExtent + screenBottomOffset;
+        screenRight = horzExtent + screenRightOffset;
+        screenLeft = -horzExtent + screenLeftOffset;
+    }
     private void FixedUpdate() {
 
         Vector3 newPos = transform.position;

@@ -215,6 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   bulletSpeed: 8
+  changeRateMin: 2
+  changeRateMax: 4
 --- !u!114 &114478038945506154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,10 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa4146202b542b43bd8e0be6ff48b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenTop: 12
-  screenBottom: -12
-  screenRight: 18
-  screenLeft: -18
+  screenTopOffset: 0
+  screenBottomOffset: 2
+  screenRightOffset: 0
+  screenLeftOffset: 0
 --- !u!135 &135479749369034146
 SphereCollider:
   m_ObjectHideFlags: 1
