@@ -29,7 +29,7 @@ public class Asteroid : MonoBehaviour {
         rb.AddTorque(torque, ForceMode.Impulse);
     }
 
-    void SpawnNewAsteroids() {
+    public void SpawnNewAsteroids() {
         //Check if pooled tag is not null, then pool the corresponding objects 'numberOfSpawnedObjects' times
         if (spawnObjectTag != null) {
             for (int i = 0; i < numberOfSpawnedObjects; i++) {
@@ -47,11 +47,19 @@ public class Asteroid : MonoBehaviour {
             rb.Sleep();
             AddForceTorque();
         }
-        if(other.tag == "Bullet") {
+        if(other.tag == "Bullet" || other.tag == "EnemyBullet") {
             //if hit by bullet destroy bullet and if possible create smaller asteroids
             other.gameObject.SetActive(false);
             SpawnNewAsteroids();
             
+            gameObject.SetActive(false);
+        }
+        if(other.tag == "UFO") {
+            //if hit UFO destroy it and the asteroid
+            CancelInvoke();
+            other.gameObject.SetActive(false);
+            SpawnNewAsteroids();
+
             gameObject.SetActive(false);
         }
     }

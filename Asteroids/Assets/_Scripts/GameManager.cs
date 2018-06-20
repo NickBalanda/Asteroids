@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
         Invoke("SpawnAsteroids", 1);
         //Check every few seconds if new asteroids shoud be spawned
         InvokeRepeating("CheckIfAllAsteroidsDestroyed", 2 , 2);
+        InvokeRepeating("SpawnUFO", 8, Random.Range(8,12));
     }
 
     void SpawnAsteroids() {
@@ -25,6 +26,13 @@ public class GameManager : MonoBehaviour {
                 newAsteroid.transform.position = GetRandomEdgePosition();
                 newAsteroid.SetActive(true);
             }
+        }
+    }
+    void SpawnUFO() {
+        GameObject ufo = ObjectPooler.instance.GetPooledObject("UFO");
+        if (ufo != null) {
+            ufo.transform.position = GetRandomEdgePosition();
+            ufo.SetActive(true);
         }
     }
 
@@ -50,7 +58,6 @@ public class GameManager : MonoBehaviour {
             if (asteroid.tag == "AsteroidLarge" || asteroid.tag == "AsteroidMedium" || asteroid.tag == "AsteroidSmall") {
                 if (asteroid.activeInHierarchy) {
                     allInactive = false;
-                    print("nope");
                     break;
                 }
             }
@@ -59,5 +66,10 @@ public class GameManager : MonoBehaviour {
             numberOfAsteroidsSpawned++;
             SpawnAsteroids();
         }
+    }
+
+    public void GameOver() {
+        CancelInvoke();
+
     }
 }

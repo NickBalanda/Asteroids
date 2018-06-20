@@ -273,6 +273,16 @@ MonoBehaviour:
     poolName: AsteroidsSmall
     amountToPool: 20
     shouldExpand: 1
+  - objectToPool: {fileID: 1633238715003192, guid: f9d2db23518d8f641a58dc70918c1b6b,
+      type: 2}
+    poolName: EnemyBullet
+    amountToPool: 20
+    shouldExpand: 1
+  - objectToPool: {fileID: 1605656671880568, guid: 9a63f75f9b40273408b85bd21a0f2d07,
+      type: 2}
+    poolName: UFO
+    amountToPool: 5
+    shouldExpand: 1
 --- !u!4 &286366609
 Transform:
   m_ObjectHideFlags: 0
@@ -635,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b3084f546bf0243afda059764dbd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfAsteroidsSpawned: 3
+  numberOfAsteroidsSpawned: 2
 --- !u!1 &1971813532
 GameObject:
   m_ObjectHideFlags: 0

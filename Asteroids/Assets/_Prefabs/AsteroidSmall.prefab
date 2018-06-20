@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f938aa93df9b994a9b2c27f3a90c8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxThrust: 7
+  maxThrust: 5
   maxTorque: 4
   spawnObjectTag: 
   numberOfSpawnedObjects: 0
