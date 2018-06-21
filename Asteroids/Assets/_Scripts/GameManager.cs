@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -13,7 +14,9 @@ public class GameManager : MonoBehaviour {
     [Header("UI")]
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public RectTransform footer;
     public GameObject newHighScore;
+    public GameObject gameOverPanel;
 
     public static GameManager instance;
     void Awake() {
@@ -90,12 +93,20 @@ public class GameManager : MonoBehaviour {
         scoreText.text = "score: " + score.ToString();
     }
 
-    public void GameOver() {
+    public void InvokeGameOver() {
+
+        StartCoroutine(GameOver());
+    }
+    public IEnumerator GameOver() {
         CancelInvoke();
-        if(score > highScore) {
+        if (score > highScore) {
             PlayerPrefs.SetInt("HighScore", score);
             highScoreText.text = "high score: " + score.ToString();
             newHighScore.SetActive(true);
         }
+        gameOverPanel.transform.localScale = new Vector3(1, 0, 1);
+        gameOverPanel.SetActive(true);
+        Tween myTween = gameOverPanel.transform.DOScaleY(1, 0.5f).SetEase(Ease.InFlash).SetDelay(2);
+        yield return myTween.WaitForCompletion();
     }
 }

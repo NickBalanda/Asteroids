@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour {
             gameObject.SetActive(false);
         }
         if (other.tag == "Player" && gameObject.tag == "EnemyBullet") {
-            GameManager.instance.GameOver();
+            GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
             gameObject.SetActive(false);
         }

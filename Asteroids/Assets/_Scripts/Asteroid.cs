@@ -63,7 +63,7 @@ public class Asteroid : MonoBehaviour {
             gameObject.SetActive(false);
         }
         if (other.tag == "Player") {
-            GameManager.instance.GameOver();
+            GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
             SpawnNewAsteroids();
             gameObject.SetActive(false);
