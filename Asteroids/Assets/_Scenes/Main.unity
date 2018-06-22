@@ -4754,7 +4754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 6
-  turnThrust: 18
+  Rotation_Smoothness: 7
 --- !u!54 &2128752611
 Rigidbody:
   m_ObjectHideFlags: 0

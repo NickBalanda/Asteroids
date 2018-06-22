@@ -18,7 +18,7 @@ public class PlayerShooter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         currentFireTime += Time.deltaTime;
-        if (Input.GetButton("Jump") && currentFireTime >= fireRate) {
+        if (Input.GetButton("Fire1") && currentFireTime >= fireRate) {
             Shoot();
             currentFireTime = 0;
         }
