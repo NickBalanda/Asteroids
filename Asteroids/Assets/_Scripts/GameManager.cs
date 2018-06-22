@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
 
         //Check every few seconds if new asteroids shoud be spawned
         InvokeRepeating("CheckIfAllAsteroidsDestroyed", 2 , 2);
-        InvokeRepeating("SpawnUFO", 8, Random.Range(8,12));
+        InvokeRepeating("SpawnUFO", 12, Random.Range(12,17));
     }
 
     void SpawnAsteroids() {

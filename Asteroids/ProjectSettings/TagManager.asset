@@ -10,6 +10,9 @@ TagManager:
   - AsteroidLarge
   - EnemyBullet
   - UFO
+  - Shield
+  - VolleyBullet
+  - Missile
   layers:
   - Default
   - TransparentFX

@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour {
         if (other.tag == "AsteroidSmall") {
             GameManager.instance.AddPoints(100); 
         }
-        if (other.tag == "UFO" && gameObject.tag == "Bullet") {
+        if (other.tag == "UFO" && gameObject.tag != "EnemyBullet") {
             GameManager.instance.AddPoints(150);
             other.gameObject.SetActive(false);
             gameObject.SetActive(false);
@@ -39,6 +39,9 @@ public class Bullet : MonoBehaviour {
         if (other.tag == "Player" && gameObject.tag == "EnemyBullet") {
             GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
+            gameObject.SetActive(false);
+        }
+        if (other.tag == "Shield" && gameObject.tag == "EnemyBullet") {
             gameObject.SetActive(false);
         }
     }

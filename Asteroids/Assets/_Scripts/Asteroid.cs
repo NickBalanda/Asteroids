@@ -47,7 +47,7 @@ public class Asteroid : MonoBehaviour {
             rb.Sleep();
             AddForceTorque();
         }
-        if(other.tag == "Bullet" || other.tag == "EnemyBullet") {
+        if(other.tag == "Bullet" || other.tag == "EnemyBullet" || other.tag == "VolleyBullet") {
             //if hit by bullet destroy bullet and if possible create smaller asteroids
             other.gameObject.SetActive(false);
             SpawnNewAsteroids();
@@ -67,6 +67,10 @@ public class Asteroid : MonoBehaviour {
             Destroy(other.gameObject);
             SpawnNewAsteroids();
             gameObject.SetActive(false);
+        }
+        if (other.tag == "Shield") {
+            rb.Sleep();
+            AddForceTorque();
         }
     }
 
