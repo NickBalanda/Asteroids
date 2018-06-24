@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 11013044}
   - component: {fileID: 11013043}
   - component: {fileID: 11013042}
+  - component: {fileID: 11013046}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -277,6 +278,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &11013046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 11013041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: d2639c9df5db47545b55d05fe2e77d73, type: 2}
 --- !u!4 &69937996 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4106848213064412, guid: 55b0ec2d863108945bef038aa07ba1f4,
@@ -339,8 +352,7 @@ MonoBehaviour:
   m_text: asteroids
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a47e322fe8a57734ca0a1c8940da51f3, type: 2}
-  m_sharedMaterial: {fileID: 21018915436662608, guid: a47e322fe8a57734ca0a1c8940da51f3,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 14c1eb5378062d744991692d399f1056, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
