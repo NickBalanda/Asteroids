@@ -1,7 +1,7 @@
 # Asteroids
 My on take on the classic Asteroids game
 
-Assets used:
+ASSETS USED:
 
 -DOTween
 https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
@@ -23,4 +23,8 @@ https://assetstore.unity.com/packages/audio/ambient/sci-fi/scifi-music-pack-1009
 -PostProcessing:
 https://assetstore.unity.com/packages/essentials/post-processing-stack-83912
 
+TUTORIAL:
 
+Use the mouse to AIM, left mouse button to SHOOT, right mouse button to THRUST
+
+Using the letters "Q", "W", "E", "R" you can activate some abilities, like in classic MOBAS like LOL.
