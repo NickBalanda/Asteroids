@@ -48,6 +48,7 @@ public class Missile : MonoBehaviour {
 
     }
     void MissileDestroyed() {
+        SoundManager.PlaySFX("Explosion");
         coll.radius = 6.76f;
         particleRing.SetActive(true);
         mesh.SetActive(false);

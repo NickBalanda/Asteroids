@@ -32,6 +32,8 @@ public class VolleyAbility : Ability {
             Vector3 projectileVector = new Vector3(projectileDirXposition,0, projectileDirZposition);
             Vector3 projectileMoveDirection = (projectileVector - startPoint).normalized * moveSpeed;
 
+            SoundManager.PlaySFX("Missile",false,0,0.2f);
+
             //Pool volley bullets
             GameObject bullet = ObjectPooler.instance.GetPooledObject("VolleyBullet");
             if (bullet != null) {

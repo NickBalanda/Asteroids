@@ -8,6 +8,7 @@ public class MissileLauncherAbility : Ability {
     public float missileSpeed;
 
     public override void AbilityTriggered() {
+        SoundManager.PlaySFX("Missile");
         GameObject missile = Instantiate(missilePrefab, ps.transform.position, ps.transform.rotation);
         missile.GetComponent<Rigidbody>().velocity = missile.transform.forward * missileSpeed;
         base.AbilityTriggered();

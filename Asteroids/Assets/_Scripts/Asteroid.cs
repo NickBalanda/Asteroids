@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class Asteroid : MonoBehaviour {
 
     public string spawnObjectTag = "AsteroidMedium";
     public int numberOfSpawnedObjects = 2;
+
+    public int pointsGained;
+    public Color popupColor;
 
     Vector3 thrust;
     Vector3 torque;
@@ -30,6 +34,7 @@ public class Asteroid : MonoBehaviour {
     }
 
     public void SpawnNewAsteroids() {
+        Camera.main.transform.DOShakePosition(0.4f,0.5f);
         //Check if pooled tag is not null, then pool the corresponding objects 'numberOfSpawnedObjects' times
         if (spawnObjectTag != null) {
             for (int i = 0; i < numberOfSpawnedObjects; i++) {
@@ -55,6 +60,8 @@ public class Asteroid : MonoBehaviour {
         }
         if(other.tag == "Bullet" || other.tag == "EnemyBullet" || other.tag == "VolleyBullet") {
             //if hit by bullet destroy bullet and if possible create smaller asteroids
+            SoundManager.PlaySFX("explosion_asteroid");
+            GameManager.instance.AddPoints(pointsGained,transform, popupColor);
             other.gameObject.SetActive(false);
             SpawnNewAsteroids();
             
@@ -69,7 +76,6 @@ public class Asteroid : MonoBehaviour {
             gameObject.SetActive(false);
         }
         if (other.tag == "Player") {
-            Instantiate(GameManager.instance.playerExplosion, other.transform.position, Quaternion.identity);
             GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
             SpawnNewAsteroids();

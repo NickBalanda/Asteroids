@@ -22,9 +22,10 @@ public class PlayerShooter : MonoBehaviour {
             Shoot();
             currentFireTime = 0;
         }
-	}
+    }
 
     void Shoot() {
+        SoundManager.PlaySFX("PlayerLaser");
         GameObject bullet = ObjectPooler.instance.GetPooledObject("Bullet");
         if (bullet != null) {
             bullet.transform.position = shootPosition.position;

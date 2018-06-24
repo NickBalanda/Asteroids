@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(true);
         pauseMenu.transform.localScale = Vector3.zero;
         Tween myTween = pauseMenu.transform.DOScale(1, 0.3f).SetEase(ease);
+        SoundManager.PlaySFX("menuOpen");
         yield return myTween.WaitForCompletion();
         ispaused = true;
         isTweening = false;

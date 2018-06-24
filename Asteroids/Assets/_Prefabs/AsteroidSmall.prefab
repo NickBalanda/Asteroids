@@ -363,6 +363,8 @@ MonoBehaviour:
   maxTorque: 4
   spawnObjectTag: 
   numberOfSpawnedObjects: 0
+  pointsGained: 100
+  popupColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!135 &135119831181669522
 SphereCollider:
   m_ObjectHideFlags: 1

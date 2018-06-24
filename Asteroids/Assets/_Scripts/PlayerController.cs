@@ -24,9 +24,11 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetButtonDown("Fire2")) {
             engineParticle.Play();
+            SoundManager.PlaySFX(engineParticle.gameObject, "engine",true);
         }
         if (Input.GetButtonUp("Fire2")) {
             engineParticle.Stop();
+            SoundManager.StopSFXObject(engineParticle.gameObject);
         }
         RotateWithMouse();
     }

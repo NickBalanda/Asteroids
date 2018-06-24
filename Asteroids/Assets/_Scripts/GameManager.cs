@@ -114,14 +114,17 @@ public class GameManager : MonoBehaviour {
     }
     public IEnumerator GameOver() {
         CancelInvoke();
+        SoundManager.PlaySFX("PlayerExplosion");
+        Instantiate(playerExplosion, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
         if (score > highScore) {
             PlayerPrefs.SetInt("HighScore", score);
             highScoreText.text = "high score: " + score.ToString();
             newHighScore.SetActive(true);
-        }
+        }     
         gameOverPanel.transform.localScale = new Vector3(1, 0, 1);
         gameOverPanel.SetActive(true);
         Tween myTween = gameOverPanel.transform.DOScaleY(1, 0.5f).SetEase(Ease.InFlash).SetDelay(2);
         yield return myTween.WaitForCompletion();
+        SoundManager.PlaySFX("menuOpen");
     }
 }

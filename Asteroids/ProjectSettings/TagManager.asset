@@ -16,6 +16,7 @@ TagManager:
   - Enemy
   - AsteroidParticle
   - PopUp
+  - UFOExplosion
   layers:
   - Default
   - TransparentFX

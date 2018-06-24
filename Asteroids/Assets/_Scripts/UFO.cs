@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,9 @@ public class UFO : MonoBehaviour {
     }
 
     void Shoot() {
+        //Play shooting sfx
+        SoundManager.PlaySFX("EnemyLaser");
+        //Spawn bullot and set its velocity vector towards the players direction
         GameObject bullet = ObjectPooler.instance.GetPooledObject("EnemyBullet");
         if (bullet != null) {
             bullet.transform.position = transform.position;
@@ -58,13 +62,14 @@ public class UFO : MonoBehaviour {
             CancelInvoke();
             other.gameObject.SetActive(false);
             other.gameObject.GetComponent<Asteroid>().SpawnNewAsteroids();
-
+            Explode();
             gameObject.SetActive(false);
         }
         if (other.tag == "Bullet") {
             //if hit by bullet destroy bullet and ufo
             CancelInvoke();
             other.gameObject.SetActive(false);
+            Explode();
             gameObject.SetActive(false);
         }
 
@@ -72,7 +77,21 @@ public class UFO : MonoBehaviour {
             Instantiate(GameManager.instance.playerExplosion, other.transform.position, Quaternion.identity);
             GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
+            Explode();
             gameObject.SetActive(false);
+        }
+    }
+
+    public void Explode() {
+        //Shake camera
+        Camera.main.transform.DOShakePosition(0.4f, 0.7f);
+        //Play sfx
+        SoundManager.PlaySFX("PlayerExplosion");
+        //Spawn explosion particle
+        GameObject explosion = ObjectPooler.instance.GetPooledObject("UFOExplosion");
+        if (explosion != null) {
+            explosion.transform.position = transform.position;
+            explosion.SetActive(true);
         }
     }
 }

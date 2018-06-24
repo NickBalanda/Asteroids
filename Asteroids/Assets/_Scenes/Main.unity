@@ -910,6 +910,11 @@ MonoBehaviour:
     poolName: Popup
     amountToPool: 10
     shouldExpand: 1
+  - objectToPool: {fileID: 1673545997511498, guid: 2ac92e08346dc024a884a924f179b883,
+      type: 2}
+    poolName: UFOExplosion
+    amountToPool: 5
+    shouldExpand: 1
 --- !u!4 &286366609
 Transform:
   m_ObjectHideFlags: 0
@@ -1324,6 +1329,7 @@ GameObject:
   - component: {fileID: 478946179}
   - component: {fileID: 478946178}
   - component: {fileID: 478946181}
+  - component: {fileID: 478946182}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1452,6 +1458,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &478946182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 478946176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3744732674782a643ba3b3bcf181fcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: BUTTON_hover
+  clickSound: BUTTON_click
 --- !u!1 &493275149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,6 +2114,7 @@ GameObject:
   - component: {fileID: 661285527}
   - component: {fileID: 661285526}
   - component: {fileID: 661285529}
+  - component: {fileID: 661285530}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -2223,6 +2243,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &661285530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661285524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3744732674782a643ba3b3bcf181fcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: BUTTON_hover
+  clickSound: BUTTON_click
 --- !u!1 &684048879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,8 +3418,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a47e322fe8a57734ca0a1c8940da51f3, type: 2}
+  m_sharedMaterial: {fileID: 21018915436662608, guid: a47e322fe8a57734ca0a1c8940da51f3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3410,8 +3444,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42.25
+  m_fontSizeBase: 42.25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3611,8 +3645,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a47e322fe8a57734ca0a1c8940da51f3, type: 2}
+  m_sharedMaterial: {fileID: 21018915436662608, guid: a47e322fe8a57734ca0a1c8940da51f3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3636,8 +3671,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42.25
+  m_fontSizeBase: 42.25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7566,8 +7601,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a47e322fe8a57734ca0a1c8940da51f3, type: 2}
+  m_sharedMaterial: {fileID: 21018915436662608, guid: a47e322fe8a57734ca0a1c8940da51f3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7591,8 +7627,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42.25
+  m_fontSizeBase: 42.25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8170,8 +8206,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a47e322fe8a57734ca0a1c8940da51f3, type: 2}
+  m_sharedMaterial: {fileID: 21018915436662608, guid: a47e322fe8a57734ca0a1c8940da51f3,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8195,8 +8232,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42.25
+  m_fontSizeBase: 42.25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9019,6 +9056,7 @@ GameObject:
   - component: {fileID: 2019014789}
   - component: {fileID: 2019014788}
   - component: {fileID: 2019014791}
+  - component: {fileID: 2019014792}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -9147,6 +9185,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2019014792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019014786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3744732674782a643ba3b3bcf181fcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: BUTTON_hover
+  clickSound: BUTTON_click
 --- !u!1 &2076018667
 GameObject:
   m_ObjectHideFlags: 0
@@ -9159,6 +9210,7 @@ GameObject:
   - component: {fileID: 2076018670}
   - component: {fileID: 2076018669}
   - component: {fileID: 2076018672}
+  - component: {fileID: 2076018673}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -9287,6 +9339,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2076018673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076018667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3744732674782a643ba3b3bcf181fcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: BUTTON_hover
+  clickSound: BUTTON_click
 --- !u!1 &2077337224
 GameObject:
   m_ObjectHideFlags: 0

@@ -348,6 +348,8 @@ MonoBehaviour:
   maxTorque: 4
   spawnObjectTag: AsteroidMedium
   numberOfSpawnedObjects: 2
+  pointsGained: 25
+  popupColor: {r: 0, g: 0.2965517, b: 1, a: 1}
 --- !u!114 &114843828975183212
 MonoBehaviour:
   m_ObjectHideFlags: 1

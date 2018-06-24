@@ -19,6 +19,7 @@ public class ShieldAbility : Ability {
     }
 
     public IEnumerator Shield() {
+        SoundManager.PlaySFX("Shield");
         shieldObject.SetActive(true);
         shieldObject.GetComponent<Renderer>().material.SetFloat("_Level", 0);
         shieldObject.transform.localScale = Vector3.zero;
