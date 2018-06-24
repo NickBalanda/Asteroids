@@ -39,7 +39,13 @@ public class Asteroid : MonoBehaviour {
                     newAsteroid.SetActive(true);
                 }
             }
-        }    
+        }
+        GameObject asteroidParticle = ObjectPooler.instance.GetPooledObject("AsteroidParticle");
+        if (asteroidParticle != null) {
+            asteroidParticle.transform.position = transform.position;
+            asteroidParticle.SetActive(true);
+            asteroidParticle.GetComponent<ParticleSystem>().Play();
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -63,6 +69,7 @@ public class Asteroid : MonoBehaviour {
             gameObject.SetActive(false);
         }
         if (other.tag == "Player") {
+            Instantiate(GameManager.instance.playerExplosion, other.transform.position, Quaternion.identity);
             GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
             SpawnNewAsteroids();

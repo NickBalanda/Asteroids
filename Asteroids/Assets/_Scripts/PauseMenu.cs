@@ -36,7 +36,7 @@ public class PauseMenu : MonoBehaviour {
         isTweening = true;
         pauseMenu.SetActive(true);
         pauseMenu.transform.localScale = Vector3.zero;
-        Tween myTween = pauseMenu.transform.DOScale(1, 0.5f).SetEase(ease);
+        Tween myTween = pauseMenu.transform.DOScale(1, 0.3f).SetEase(ease);
         yield return myTween.WaitForCompletion();
         ispaused = true;
         isTweening = false;
@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour {
     IEnumerator Unpause() {
         Time.timeScale = 1;
         isTweening = true;
-        Tween myTween = pauseMenu.transform.DOScale(0, 0.5f).SetEase(ease);
+        Tween myTween = pauseMenu.transform.DOScale(0, 0.3f).SetEase(ease);
         yield return myTween.WaitForCompletion();
         pauseMenu.SetActive(false);
         ispaused = false;

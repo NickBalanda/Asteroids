@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
     public GameObject newHighScore;
     public GameObject gameOverPanel;
 
+    [Header("Effects")]
+    public GameObject playerExplosion;
+
     public static GameManager instance;
     void Awake() {
         instance = this;
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
     void Start () {
         
-        AddPoints(0);
+        //AddPoints(0);
 
         //Set the current high score
         highScore = PlayerPrefs.GetInt("HighScore");
@@ -88,9 +91,21 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void AddPoints(int points) {
+    public void AddPoints(int points,Transform tra, Color color) {
+        //Update Points
         score += points;
         scoreText.text = "score: " + score.ToString();
+        //Spawns popup text
+
+        GameObject popup = ObjectPooler.instance.GetPooledObject("PopUp");
+        if (popup != null) {
+            popup.transform.position = tra.position;
+            //popup.GetComponent<Animator>().Play("PopupText");
+            TextMeshPro txtPro = popup.GetComponentInChildren<TextMeshPro>();
+            txtPro.outlineColor = color;
+            txtPro.text = points.ToString();
+            popup.SetActive(true);
+        }
     }
 
     public void InvokeGameOver() {

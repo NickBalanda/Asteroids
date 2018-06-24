@@ -13,6 +13,9 @@ TagManager:
   - Shield
   - VolleyBullet
   - Missile
+  - Enemy
+  - AsteroidParticle
+  - PopUp
   layers:
   - Default
   - TransparentFX

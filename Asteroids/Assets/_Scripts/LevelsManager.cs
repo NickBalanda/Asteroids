@@ -20,7 +20,20 @@ public class LevelsManager : MonoBehaviour {
         anim.Play("FadeOut");
     }
 
+    //I created this to load the scene after a certain delay, so that the timeline animatian would play
+    public void DelayFadeToScene(float delay) {
+        StartCoroutine(FadeAfterTime(delay));
+    }
+    IEnumerator FadeAfterTime(float delay) {
+        yield return new WaitForSeconds(delay);
+        FadeToScene(1);
+    }
+
     public void LoadScene() {
         SceneManager.LoadScene(levelToLoad);
+    }
+
+    public void Quit() {
+        Application.Quit();
     }
 }

@@ -69,6 +69,7 @@ public class UFO : MonoBehaviour {
         }
 
         if (other.tag == "Player") {
+            Instantiate(GameManager.instance.playerExplosion, other.transform.position, Quaternion.identity);
             GameManager.instance.InvokeGameOver();
             Destroy(other.gameObject);
             gameObject.SetActive(false);
