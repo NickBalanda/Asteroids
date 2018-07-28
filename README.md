@@ -28,3 +28,7 @@ TUTORIAL:
 Use the mouse to AIM, left mouse button to SHOOT, right mouse button to THRUST
 
 Using the letters "Q", "W", "E", "R" you can activate some abilities, like in classic MOBAS like LOL.
+
+PLAY THE GAME:
+
+https://nickbalanda.itch.io/asteroids
